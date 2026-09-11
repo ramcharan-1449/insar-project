@@ -1,0 +1,26 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mine_name": "Shyamsundarpur Colliery",
+                "source_status": "ASSUMED_FOR_DEVELOPMENT_ONLY"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [87.2500, 23.6400],
+                        [87.2600, 23.6380],
+                        [87.2680, 23.6430],
+                        [87.2660, 23.6520],
+                        [87.2570, 23.6540],
+                        [87.2490, 23.6490],
+                        [87.2500, 23.6400]
+                    ]
+                ]
+            }
+        }
+    ]
+}

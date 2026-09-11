@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "mine_aoi",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 87.25, 23.64 ], [ 87.26, 23.638 ], [ 87.268, 23.643 ], [ 87.266, 23.652 ], [ 87.257, 23.654 ], [ 87.249, 23.649 ], [ 87.25, 23.64 ] ] ] } }
+]
+}

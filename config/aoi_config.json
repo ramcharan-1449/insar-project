@@ -1,0 +1,32 @@
+{
+    "mine_name": "Shyamsundarpur Colliery",
+    "mine_type": "Underground Coal Mine",
+    "coalfield_name": "Raniganj Coalfield",
+    "district": "Paschim Bardhaman",
+    "state": "West Bengal",
+    "country": "India",
+    "aoi_status": "ASSUMED_FOR_DEVELOPMENT",
+    "boundary_source": "TEMPORARY_ASSUMED_POLYGON",
+    "coordinate_system": "EPSG:4326",
+    "coordinate_order": "longitude_latitude",
+    "geojson_file": "config/mine_aoi.geojson",
+    "reference_extent": {
+        "min_longitude": 87.2417,
+        "min_latitude": 23.6292,
+        "max_longitude": 87.275,
+        "max_latitude": 23.6556
+    },
+    "public_location_check": {
+        "latitude": 23.648263,
+        "longitude": 87.257514
+    },
+    "assumed_aoi": true,
+    "replacement_required": true,
+    "notes": "Temporary assumed AOI used for development and testing. Must be replaced with a verified Shyamsundarpur mine boundary before final InSAR scientific analysis.",
+    "calculated_aoi_bounds": {
+        "min_longitude": 87.249,
+        "min_latitude": 23.638,
+        "max_longitude": 87.268,
+        "max_latitude": 23.654
+    }
+}

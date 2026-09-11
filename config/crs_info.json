@@ -1,0 +1,25 @@
+{
+    "geographic_crs": "EPSG:4326",
+    "coordinate_system_name": "WGS 84",
+
+    "coordinate_order": [
+        "longitude",
+        "latitude"
+    ],
+
+    "geojson_crs": "EPSG:4326",
+
+    "projected_crs": "EPSG:32645",
+    "projected_crs_name": "WGS 84 / UTM zone 45N",
+    "projected_crs_status": "SELECTED_FOR_DEVELOPMENT",
+
+    "metric_operations": {
+        "status": "READY",
+        "unit": "meters",
+        "note": "EPSG:32645 will be used for metric spatial operations such as distance, area, grid spacing, and spatial sampling."
+    },
+
+    "status": "DEVELOPMENT_CONFIGURATION",
+
+    "notes": "EPSG:4326 is used for geographic storage and GeoJSON. EPSG:32645 is selected for development-stage metric GIS operations. Final CRS strategy should be reviewed when the verified AOI is frozen."
+}
