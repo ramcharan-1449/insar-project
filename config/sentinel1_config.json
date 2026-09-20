@@ -1,0 +1,36 @@
+{
+    "mission": "Sentinel-1",
+    "sensor": "C-band SAR",
+
+    "study_area": {
+        "mine_name": "Shyamsundarpur Colliery",
+        "aoi_file": "config/mine_aoi.geojson"
+    },
+
+    "data_type": "SLC",
+
+    "processing_requirement": "InSAR",
+
+    "orbit_directions": [
+        "ASCENDING",
+        "DESCENDING"
+    ],
+
+    "polarization": "VV",
+
+    "acquisition_strategy": {
+        "status": "TO_BE_SELECTED",
+        "pair_selection": "TO_BE_SELECTED",
+        "temporal_baseline": "TO_BE_SELECTED"
+    },
+
+    "hyp3": {
+        "status": "NOT_STARTED"
+    },
+
+    "download": {
+        "status": "NOT_STARTED"
+    },
+
+    "notes": "Development configuration for Sentinel-1 SLC acquisition. Final scenes, orbit direction, dates, and pair strategy will be selected after AOI coverage and scene availability are checked."
+}
