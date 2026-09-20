@@ -5,6 +5,8 @@ __pycache__/
 *.zip
 
 data/processed/
+# Generated delivery artifacts. Regenerate these with the pipeline; do not commit them.
+data/final/
 data/final_dataset/
 data/handoff/
 

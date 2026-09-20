@@ -1,4 +1,6 @@
-Automated InSAR Data Production Pipeline
+# Shyamsundarpur InSAR Production Pipeline
+
+**Canonical repository:** this staged, rerun-safe repository is the sole active codebase for InSAR handoff. Validate it against `chjc14`'s completed 80 m output, then archive `chjc14` as read-only provenance; do not keep both repositories active.
 
 An automated Python pipeline for Sentinel-1 InSAR data discovery, interferometric processing through HyP3, spatial feature extraction, temporal quality control, and final dataset generation.
 
@@ -8,7 +10,7 @@ Shyamsundarpur UG Mine
 
 Raniganj Coalfield, Paschim Bardhaman, West Bengal, India.
 
-The project uses a mine-area AOI and a fixed 100 m spatial grid for extracting InSAR features.
+The project uses a mine-area AOI and a fixed **80 m** spatial grid for extracting InSAR features. `config/grid_config.json` is the source of truth; do not substitute a 100 m legacy grid.
 
 Pipeline Overview
 
@@ -16,15 +18,18 @@ Run the complete workflow with:
 
 python run_pipeline.py
 
-The pipeline consists of 13 automated stages:
+The pipeline includes numbered automated stages:
 
 Sentinel-1 online discovery
 Automatic pair selection
 Pair geometry validation
 Priority pair validation
+Google Earth Engine setup
 Rerun-safe HyP3 submission
 HyP3 monitoring and download
 Unique HyP3 product extraction
+Canonical 80 m grid creation and validation
+Reference-decision validation
 Spatial feature extraction
 Temporal quality control
 Temporal observation generation
@@ -50,7 +55,7 @@ HyP3 InSAR processing
 Processed InSAR products
     |
     v
-100 m grid spatial feature extraction
+80 m grid spatial feature extraction
     |
     v
 Temporal QC and feature engineering
@@ -173,7 +178,7 @@ Contains temporal statistics and engineered temporal features.
 
 insar_spatial_features.csv
 
-Contains spatially extracted InSAR features for the 100 m grid cells.
+Contains spatially extracted InSAR features for the 80 m grid cells.
 
 grid.geojson
 
@@ -189,6 +194,30 @@ The data/final_dataset/ directory contains generated outputs and can be regenera
 HyP3 product ZIP files should not be committed to GitHub.
 Authentication credentials must be configured separately by each user.
 The pipeline is designed to be rerun safely and avoid unnecessarily duplicating previously registered HyP3 jobs.
+
+## Production handoff contract
+
+Only an explicitly reviewed, regenerated package may be handed to Backend, ML, GNN, Gaussian Process, or Dashboard teams. The completed 80 m / 1,591-cell 2026 Shyamsundarpur handoff from `chjc14` is not present in this checkout, so this repository does not claim to reproduce it yet. Validate schema, dates, cell count, and agreed value tolerance before archiving `chjc14`.
+
+Legacy `test_pair` / 2024 artifacts are development-only and must never be used as a handoff.
+
+## Reference and node-to-cell checkpoints
+
+Reference-point selection and QC are independently auditable in [`src/reference`](src/reference/README.md), not part of HyP3 submission. Review the reference decision record and run:
+
+```powershell
+python src/reference/validate_reference_decision.py
+```
+
+The production runner executes this same gate before spatial extraction and stops until the decision is approved.
+
+Both GNN and Gaussian Process consumers require an approved `node_id` to `cell_id` mapping. Copy `config/node_cell_mapping.template.csv` to `config/node_cell_mapping.csv`, populate it from authoritative node geometry in `EPSG:32645`, obtain joint InSAR/ML approval, then run:
+
+```powershell
+python src/common/validate_node_cell_mapping.py
+```
+
+No mapping is fabricated here: actual node locations and reviewer ownership are needed to complete this joint checkpoint.
 Scientific Processing
 
 The pipeline separates the workflow into acquisition, InSAR processing, spatial extraction, temporal processing, quality control, and final packaging.

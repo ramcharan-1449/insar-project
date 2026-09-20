@@ -38,13 +38,10 @@ SPATIAL_FILE = (
     / "insar_grid_features.csv"
 )
 
-GRID_FILE = (
-    PROJECT_ROOT
-    / "data"
-    / "processed"
-    / "grid"
-    / "mine_grid_100m.geojson"
-)
+with (PROJECT_ROOT / "config" / "grid_config.json").open(encoding="utf-8") as stream:
+    GRID_CONFIG = json.load(stream)
+
+GRID_FILE = PROJECT_ROOT / "data" / "processed" / "grid" / GRID_CONFIG["grid_filename"]
 
 QC_FILE = (
     PROJECT_ROOT
@@ -683,7 +680,7 @@ Stage 16 final integrity QC: **PASS**
 ## Grid
 
 - Grid cells: {grid_cell_count}
-- Grid size: 100 m
+- Grid size: {GRID_CONFIG['grid_size_m']} m
 - CRS: EPSG:32645
 
 ## InSAR Products
@@ -724,7 +721,7 @@ Spatial/product-level InSAR feature dataset.
 
 ### grid.geojson
 
-100 m spatial grid used for the analysis.
+{GRID_CONFIG['grid_size_m']} m spatial grid used for the analysis.
 
 ### dataset_metadata.json
 

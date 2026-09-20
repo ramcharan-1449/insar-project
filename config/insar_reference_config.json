@@ -1,0 +1,65 @@
+{
+    "reference_framework": {
+        "status": "DEVELOPMENT_REFERENCE_QC_COMPLETE",
+        "method": "ROBUST_MEDIAN_OF_HIGH_COHERENCE_VALID_PIXELS",
+        "reference_type": "AREA_BASED"
+    },
+
+    "quality_rules": {
+        "minimum_correlation": 0.5,
+        "reference_candidate_correlation": 0.7,
+        "minimum_valid_pixel_percentage": 30.0,
+        "exclude_zero_los_displacement": true,
+        "require_finite_values": true
+    },
+
+    "reference_estimation": {
+        "statistic": "MEDIAN",
+        "units": "meters",
+        "description": "Median LOS displacement of valid high-coherence reference candidate pixels.",
+
+        "reference_result": {
+            "pair_id": "test_pair_01",
+            "reference_los_m": 0.004035,
+            "reference_los_mm": 4.035,
+            "reference_candidate_pixels": 401,
+            "reference_correlation_median": 0.9441,
+            "reference_correlation_min": 0.8308,
+            "reference_correlation_max": 0.9862
+        }
+    },
+
+    "displacement": {
+        "primary_variable": "LOS_DISPLACEMENT",
+        "units": "meters",
+        "derived_units": "millimeters",
+        "interpretation": "Relative LOS displacement with respect to the selected reference estimate."
+    },
+
+    "coherence": {
+        "variable": "CORRELATION",
+        "minimum_valid_value": 0.5,
+        "interpretation": "Higher correlation indicates stronger interferometric consistency; low correlation indicates reduced reliability."
+    },
+
+    "temporal_interpretation": {
+        "pair_displacement_allowed": true,
+        "velocity_requires_multidate_series": true,
+        "long_term_trend_requires_multidate_series": true
+    },
+
+    "scientific_constraints": {
+        "reference_requires_review": true,
+        "absolute_ground_displacement": false,
+        "current_aoi_is_temporary": true,
+        "aoi_source_status": "ASSUMED_FOR_DEVELOPMENT_ONLY"
+    },
+
+    "notes": [
+        "The reference estimate is relative and does not represent absolute ground motion.",
+        "A high-coherence candidate does not automatically prove physical stability.",
+        "Reference selection must be scientifically reviewed before final project freeze.",
+        "Low coherence must not be interpreted as zero displacement.",
+        "The current Shyamsundarpur AOI is temporary and must be replaced by an authoritative boundary before final scientific results."
+    ]
+}

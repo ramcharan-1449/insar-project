@@ -1,0 +1,8 @@
+{
+  "grid_size_m": 80,
+  "expected_cell_count": 1591,
+  "crs": "EPSG:32645",
+  "grid_filename": "mine_grid_80m.geojson",
+  "status": "CANONICAL",
+  "notes": "The 80 m grid is the project contract. Do not substitute a 100 m grid to match legacy development artifacts."
+}

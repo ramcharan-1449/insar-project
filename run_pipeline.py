@@ -37,22 +37,42 @@ STAGES = [
     ),
 
     (
-        "Stage 3 - Rerun-safe HyP3 submission",
+        "Stage 3 - Google Earth Engine setup",
+        "src/gee/gee_setup.py",
+    ),
+
+    (
+        "Stage 4 - Rerun-safe HyP3 submission",
         "src/hyp3/submit_network_jobs.py",
     ),
 
     (
-        "Stage 4 - HyP3 monitoring and download",
+        "Stage 5 - HyP3 monitoring and download",
         "src/hyp3/monitor_and_download.py",
     ),
 
     (
-        "Stage 5 - Unique HyP3 product extraction",
+        "Stage 6 - Unique HyP3 product extraction",
         "src/hyp3/extract_unique_products.py",
     ),
 
     (
-        "Stage 6 - Spatial feature extraction",
+        "Stage 7 - Create canonical 80 m mine grid",
+        "src/spatial/create_mine_grid.py",
+    ),
+
+    (
+        "Stage 8 - Validate canonical mine grid",
+        "src/spatial/validate_mine_grid.py",
+    ),
+
+    (
+        "Stage 9 - Validate reference decision",
+        "src/reference/validate_reference_decision.py",
+    ),
+
+    (
+        "Stage 10 - Spatial feature extraction",
         "src/spatial/extract_grid_features.py",
     ),
 

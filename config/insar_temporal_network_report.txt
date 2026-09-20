@@ -1,0 +1,35 @@
+COMPLETE INSAR TEMPORAL NETWORK VALIDATION
+============================================================
+Original automated pairs : 9
+Network extension pairs  : 10
+Development pairs        : 3
+Unique temporal pairs    : 22
+Unique acquisition dates : 30
+Connected components      : 11
+Largest component        : 5 dates
+Isolated dates           : 20
+
+COMPONENTS
+------------------------------------------------------------
+Component 1: 5 dates
+  2025-07-19 → 2025-07-31 → 2025-08-12 → 2025-08-24 → 2025-09-05
+Component 2: 4 dates
+  2024-01-11 → 2024-01-23 → 2024-02-04 → 2024-02-16
+Component 3: 4 dates
+  2025-02-03 → 2025-02-15 → 2025-02-27 → 2025-03-11
+Component 4: 3 dates
+  2024-05-10 → 2024-06-03 → 2024-06-15
+Component 5: 2 dates
+  2024-06-27 → 2024-07-09
+Component 6: 2 dates
+  2025-01-08 → 2025-01-20
+Component 7: 2 dates
+  2025-03-06 → 2025-03-18
+Component 8: 2 dates
+  2025-06-22 → 2025-07-04
+Component 9: 2 dates
+  2025-08-14 → 2025-08-26
+Component 10: 2 dates
+  2025-12-10 → 2025-12-22
+Component 11: 2 dates
+  2026-08-16 → 2026-08-28

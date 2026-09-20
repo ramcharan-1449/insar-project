@@ -1,5 +1,6 @@
 
 from pathlib import Path
+import json
 import re
 
 import geopandas as gpd
@@ -17,13 +18,10 @@ from rasterio.windows import from_bounds
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-GRID_FILE = (
-    PROJECT_ROOT
-    / "data"
-    / "processed"
-    / "grid"
-    / "mine_grid_100m.geojson"
-)
+with (PROJECT_ROOT / "config" / "grid_config.json").open(encoding="utf-8") as stream:
+    GRID_CONFIG = json.load(stream)
+
+GRID_FILE = PROJECT_ROOT / "data" / "processed" / "grid" / GRID_CONFIG["grid_filename"]
 
 INVENTORY_FILE = (
     PROJECT_ROOT

@@ -1,0 +1,12 @@
+NETWORK PAIR VALIDATION REPORT
+==================================================
+Candidates checked : 10
+Approved           : 10
+Review             : 0
+Rejected           : 0
+Unknown baseline   : 0
+
+Baseline thresholds:
+GOOD       <= 200 m
+ACCEPTABLE <= 500 m
+Temporal baseline <= 24 days
